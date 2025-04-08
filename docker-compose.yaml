@@ -1,0 +1,11 @@
+services:
+  mini-project-db:
+    image: mysql:latest
+    container_name: mini-project-db
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: mini-project
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init-scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
